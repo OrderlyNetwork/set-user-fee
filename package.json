@@ -1,0 +1,20 @@
+{
+  "name": "set-user-fee",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "tsx index.ts"
+  },
+  "keywords": [],
+  "author": "Mario Reder <mario@orderly.network>",
+  "license": "MIT",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^22.10.9",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "@noble/ed25519": "^2.2.3",
+    "bs58": "^6.0.0"
+  }
+}
