@@ -45,13 +45,13 @@ Before you can use this tool, you need to:
 5. Open the `index.ts` file in a text editor and update the following values:
    ```typescript
    // Your Orderly account ID from the admin wallet
-   const orderlyAccountId = "your-account-id-here";
+   const adminAddress = "your-admin-evm-or-sol-address-here";
 
    // Your Orderly secret key from the admin wallet
-   const orderlySecret = "your-secret-key-here";
+   const orderlyAdminSecret = "ed25519:your-admin-secret-key-here";
 
    // Your broker ID
-   const brokerId = "your-broker-id";
+   const brokerId = "your-broker-id-here";
 
    // Set your desired fee rates
    const makerFeeRate = 0;           // e.g., 0 for 0% fee
@@ -59,8 +59,8 @@ Before you can use this tool, you need to:
 
    // List of user addresses to update
    const addresses = [
-     "0xAddress1...",
-     "0xAddress2...",
+      "0xAddress1...",
+      "0xAddress2...",
    ];
    ```
 
