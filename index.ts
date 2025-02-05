@@ -30,11 +30,17 @@ const addresses = [
   // ...
 ];
 
+// network: "testnet" or "mainnet"
+const network = "testnet";
+
 // ==== DO NOT CHANGE ANYTHING BELOW ====
 import { getPublicKeyAsync, signAsync } from "@noble/ed25519";
 import bs58 from "bs58";
 
-const baseUrl = "https://testnet-api-evm.orderly.org";
+const baseUrl =
+  network === "testnet"
+    ? "https://testnet-api-evm.orderly.org"
+    : "https://api-evm.orderly.org";
 
 async function main() {
   const orderlyKey = bs58.decode(orderlyAdminSecret.substring(8));
@@ -47,8 +53,8 @@ async function main() {
       body: JSON.stringify({
         maker_fee_rate: makerFeeRate,
         taker_fee_rate: takerFeeRate,
-        account_ids: addresses.map((address) =>
-          getAccountId(address, brokerId)
+        account_ids: await Promise.all(
+          addresses.map((address) => getAccountId(address, brokerId))
         ),
       }),
     }
